@@ -1,4 +1,4 @@
-//Versión terminada: confirmación para GitHUB
+//Versión final de código: confirmación para GitHUB
 
 let Amigos = [];
 
