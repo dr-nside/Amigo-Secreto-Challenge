@@ -1,3 +1,5 @@
+//Versión terminada: confirmación para GitHUB
+
 let Amigos = [];
 
 //Función para actualizar la lista amigos en pantalla
