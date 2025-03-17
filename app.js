@@ -1,24 +1,53 @@
-// El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 let Amigos = [];
+
+//Función para actualizar la lista amigos en pantalla
+function actualizarListaAmigos() {
+    let lista = document.getElementById("listaAmigos");
+    lista.innerHTML = ""; // Limpiar la lista antes de actualizar
+    for (let i = 0; i < Amigos.length; i++) {
+        let li = document.createElement("li");
+        li.textContent = Amigos[i];
+        lista.appendChild(li);
+    }
+}
 
 //Función para agregar un amigo a la lista
 function agregarAmigoLista() {
     let InputNombre = document.getElementById("amigo").value;
     
-    if (InputNombre === "" || NombreIngresado == " ") {
+    if (InputNombre === "" || InputNombre == " ") {
         alert("Por favor ingrese un nombre válido");
+        LimpiarInput();
     } else {
         if (Amigos.includes(InputNombre)) {
             alert("Este nombre ya ha sido agregado");
+            LimpiarInput();
         } else {
             Amigos.push(InputNombre);
             LimpiarInput();
+            actualizarListaAmigos();
             console.log(Amigos);
             console.log(InputNombre);
         }
     } 
     
 }
+
+function sortearAmigo() {
+    let IndiceAleatorio = Math.floor(Math.random()*Amigos.length);
+    console.log(IndiceAleatorio);
+    if (Amigos.length == 0) {
+        alert("Por favor ingrese nombres para sortear, la lista está vacía");
+        LimpiarInput();
+    } else {
+        let AmigoElegido = Amigos[IndiceAleatorio];
+        let resultado = document.getElementById("resultado");
+        resultado.innerHTML = "";
+            let li2 = document.createElement("li2");
+            li2.textContent = (`El amigo secreto sorteado es: ${Amigos[IndiceAleatorio]}`);
+            resultado.appendChild(li2);
+        }   
+    }
 
 // Función para limpiar el campo de entrada
 function LimpiarInput() {
